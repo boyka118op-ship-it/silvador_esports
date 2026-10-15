@@ -1,0 +1,903 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#090909">
+
+<meta name="description" content="BINI — THE FINALS competitive player profile, achievements, gaming setup and settings.">
+
+<title>BINI | THE FINALS Esports</title>
+
+<style>
+
+:root {
+
+  --bg: #090909;
+
+  --panel: #121212;
+
+  --gold: #d9b45b;
+
+  --gold-light: #f5df9b;
+
+  --text: #f5f5f5;
+
+  --muted: #999999;
+
+  --border: rgba(217,180,91,.23);
+
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+
+body {
+
+  margin: 0;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  line-height: 1.6;
+
+}
+
+a { color: inherit; text-decoration: none; }
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.container { width: min(1080px, 90%); margin: auto; }
+
+header {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 10;
+
+  background: rgba(9,9,9,.94);
+
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid var(--border);
+
+}
+
+.nav {
+
+  min-height: 66px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+}
+
+.logo {
+
+  font-weight: 950;
+
+  font-size: 25px;
+
+  letter-spacing: 3px;
+
+  color: var(--gold);
+
+}
+
+nav { display: flex; gap: 20px; flex-wrap: wrap; }
+
+nav a { font-size: 12px; color: #c7c7c7; }
+
+nav a:hover, .gold { color: var(--gold); }
+
+.hero {
+
+  padding: 90px 0 75px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid var(--border);
+
+  background:
+
+    radial-gradient(ellipse at 90% 20%, #4b38151f, transparent 48%),
+
+    linear-gradient(135deg, #15130e, #090909 60%);
+
+}
+
+.hero::after {
+
+  content: "BINI";
+
+  position: absolute;
+
+  right: -15px;
+
+  bottom: -65px;
+
+  font-size: clamp(130px, 26vw, 300px);
+
+  font-weight: 1000;
+
+  letter-spacing: -12px;
+
+  color: rgba(217,180,91,.045);
+
+  pointer-events: none;
+
+}
+
+.eyebrow {
+
+  color: var(--gold);
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+}
+
+h1 {
+
+  font-size: clamp(65px, 13vw, 120px);
+
+  line-height: .95;
+
+  margin: 17px 0;
+
+  letter-spacing: -5px;
+
+  font-weight: 950;
+
+}
+
+h1 span {
+
+  color: var(--gold);
+
+  display: block;
+
+}
+
+.hero p {
+
+  max-width: 510px;
+
+  color: #aaa;
+
+  font-size: 15px;
+
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+
+.tag {
+
+  padding: 7px 12px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 3px;
+
+  color: #ddd;
+
+  font-size: 11px;
+
+  background: #ffffff05;
+
+}
+
+.tag strong { color: var(--gold); }
+
+section { padding: 65px 0; }
+
+.section-head { margin-bottom: 27px; }
+
+.section-head h2 {
+
+  font-size: clamp(27px, 5vw, 38px);
+
+  margin: 5px 0;
+
+  letter-spacing: -1px;
+
+}
+
+.section-head p { color: var(--muted); font-size: 13px; margin: 0; }
+
+.stats {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 13px;
+
+}
+
+.card {
+
+  background: linear-gradient(145deg, #171717, #101010);
+
+  border: 1px solid #292929;
+
+  border-radius: 7px;
+
+  padding: 21px;
+
+  min-width: 0;
+
+}
+
+.stat-number {
+
+  color: var(--gold-light);
+
+  font-size: 34px;
+
+  font-weight: 900;
+
+  line-height: 1.2;
+
+}
+
+.stat-label {
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  margin-top: 7px;
+
+}
+
+.note { font-size: 11px; color: #777; margin-top: 15px; }
+
+.tournament {
+
+  display: grid;
+
+  grid-template-columns: 55px 1fr auto;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 10px;
+
+}
+
+.trophy {
+
+  width: 48px;
+
+  height: 48px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--gold);
+
+  background: #d9b45b12;
+
+  border: 1px solid var(--border);
+
+  border-radius: 5px;
+
+  font-size: 22px;
+
+}
+
+.tournament h3 { margin: 0; font-size: 15px; }
+
+.tournament p { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
+
+.place { color: var(--gold); font-size: 12px; text-align: right; }
+
+.setup-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+}
+
+.setup-item {
+
+  padding: 19px;
+
+  border: 1px solid #292929;
+
+  background: var(--panel);
+
+  border-radius: 6px;
+
+}
+
+.setup-item .icon { font-size: 22px; }
+
+.setup-item h3 { margin: 9px 0 3px; font-size: 14px; }
+
+.setup-item p { color: var(--gold-light); margin: 0; font-size: 12px; }
+
+.setup-item small { color: var(--muted); font-size: 11px; }
+
+.settings-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+
+}
+
+.setting {
+
+  background: #121212;
+
+  border: 1px solid #292929;
+
+  border-radius: 5px;
+
+  padding: 16px;
+
+}
+
+.setting span { display: block; color: var(--muted); font-size: 11px; }
+
+.setting strong { display: block; margin-top: 5px; font-size: 21px; color: var(--gold-light); }
+
+.socials { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.social {
+
+  border: 1px solid var(--border);
+
+  border-radius: 4px;
+
+  padding: 11px 16px;
+
+  font-size: 12px;
+
+  transition: .2s;
+
+}
+
+.social:hover { background: var(--gold); color: #090909; }
+
+footer {
+
+  border-top: 1px solid var(--border);
+
+  padding: 25px 0;
+
+  color: #777;
+
+  font-size: 11px;
+
+}
+
+.footer-inner { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+
+footer strong { color: var(--gold); letter-spacing: 2px; }
+
+@media (max-width: 600px) {
+
+  .container { width: 90%; }
+
+  .nav { align-items: flex-start; padding: 14px 0; flex-direction: column; }
+
+  nav { gap: 13px; }
+
+  nav a { font-size: 11px; }
+
+  .hero { padding: 65px 0 60px; }
+
+  h1 { letter-spacing: -3px; }
+
+  section { padding: 47px 0; }
+
+  .stats { gap: 7px; }
+
+  .card { padding: 13px 10px; }
+
+  .stat-number { font-size: 25px; }
+
+  .stat-label { font-size: 9px; letter-spacing: .3px; }
+
+  .setup-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+
+  .setup-item { padding: 13px; }
+
+  .settings-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+
+  .tournament { grid-template-columns: 42px 1fr auto; gap: 9px; padding: 13px; }
+
+  .trophy { width: 40px; height: 40px; }
+
+  .tournament h3 { font-size: 13px; }
+
+  .place { font-size: 10px; }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="container nav">
+
+    <a class="logo" href="#home">BINI<span>.</span></a>
+
+    <nav>
+
+      <a href="#career">CAREER</a>
+
+      <a href="#setup">SETUP</a>
+
+      <a href="#settings">SETTINGS</a>
+
+      <a href="#contact">CONTACT</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<main>
+
+  <section class="hero" id="home">
+
+    <div class="container">
+
+      <div class="eyebrow">Competitive Player / Egypt</div>
+
+      <h1>BINI<span>THE FINALS</span></h1>
+
+      <p>
+
+        Competitive FPS player focused on precision, consistency
+
+        and high-level performance. Welcome to my official player profile.
+
+      </p>
+
+      <div class="tags">
+
+        <span class="tag"><strong>20</strong> YEARS OLD</span>
+
+        <span class="tag">🇪🇬 EGYPT</span>
+
+        <span class="tag">TEAM: <strong>CONTROL OF</strong></span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="eyebrow">Player Overview</div>
+
+        <h2>Competitive <span class="gold">Stats</span></h2>
+
+        <p>My competitive career at a glance.</p>
+
+      </div>
+
+      <div class="stats">
+
+        <div class="card">
+
+          <div class="stat-number" id="tournamentCount">00</div>
+
+          <div class="stat-label">Tournaments</div>
+
+        </div>
+
+        <div class="card">
+
+          <div class="stat-number" id="achievementCount">00</div>
+
+          <div class="stat-label">Achievements</div>
+
+        </div>
+
+        <div class="card">
+
+          <div class="stat-number" id="prizeTotal">$0</div>
+
+          <div class="stat-label">Prize Money</div>
+
+        </div>
+
+      </div>
+
+      <p class="note">Stats are editable below in the website code. Only add verified results.</p>
+
+    </div>
+
+  </section>
+
+  <section id="career">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="eyebrow">My Journey</div>
+
+        <h2>Tournaments & <span class="gold">Achievements</span></h2>
+
+        <p>Competitive results and milestones.</p>
+
+      </div>
+
+      <div id="tournamentList">
+
+        <div class="card tournament">
+
+          <div class="trophy">🏆</div>
+
+          <div>
+
+            <h3>ADD YOUR TOURNAMENT</h3>
+
+            <p>Replace this with your real tournament and year.</p>
+
+          </div>
+
+          <div class="place">YOUR PLACE</div>
+
+        </div>
+
+        <div class="card tournament">
+
+          <div class="trophy">🥇</div>
+
+          <div>
+
+            <h3>ADD YOUR ACHIEVEMENT</h3>
+
+            <p>Event name / Organizer / Year</p>
+
+          </div>
+
+          <div class="place">RESULT</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="setup">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="eyebrow">My Equipment</div>
+
+        <h2>Gaming <span class="gold">Setup</span></h2>
+
+        <p>The gear I use to compete.</p>
+
+      </div>
+
+      <div class="setup-grid">
+
+        <div class="setup-item">
+
+          <div class="icon">🖱️</div>
+
+          <h3>Gaming Mouse</h3>
+
+          <p>ATK F1 V2 Ultimate</p>
+
+          <small>Precision & tracking</small>
+
+        </div>
+
+        <div class="setup-item">
+
+          <div class="icon">⌨️</div>
+
+          <h3>Keyboard</h3>
+
+          <p>LDON 68HE Pro</p>
+
+          <small>Magnetic switches</small>
+
+        </div>
+
+        <div class="setup-item">
+
+          <div class="icon">🖥️</div>
+
+          <h3>Monitor</h3>
+
+          <p>Lenovo Legion 24-10</p>
+
+          <small>240Hz refresh rate</small>
+
+        </div>
+
+        <div class="setup-item">
+
+          <div class="icon">🎯</div>
+
+          <h3>Mousepad</h3>
+
+          <p>Attack Shark CM05</p>
+
+          <small>Glass gaming pad</small>
+
+        </div>
+
+        <div class="setup-item">
+
+          <div class="icon">🎧</div>
+
+          <h3>IEM</h3>
+
+          <p>SIVGA SM100</p>
+
+          <small>In-ear gaming audio</small>
+
+        </div>
+
+        <div class="setup-item">
+
+          <div class="icon">🔊</div>
+
+          <h3>DAC</h3>
+
+          <p>NiceHAC NK1 Max</p>
+
+          <small>Audio setup</small>
+
+        </div>
+
+        <div class="setup-item">
+
+          <div class="icon">⚙️</div>
+
+          <h3>Processor</h3>
+
+          <p>AMD Ryzen 5 5600X</p>
+
+          <small>Gaming PC</small>
+
+        </div>
+
+        <div class="setup-item">
+
+          <div class="icon">🎮</div>
+
+          <h3>Graphics Card</h3>
+
+          <p>AMD Radeon RX 7600</p>
+
+          <small>Gaming PC</small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="settings">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="eyebrow">In-Game Configuration</div>
+
+        <h2>My <span class="gold">Settings</span></h2>
+
+        <p>My current aim and gameplay configuration.</p>
+
+      </div>
+
+      <div class="settings-grid">
+
+        <div class="setting">
+
+          <span>Mouse DPI</span>
+
+          <strong>800</strong>
+
+        </div>
+
+        <div class="setting">
+
+          <span>In-Game Sensitivity</span>
+
+          <strong>40</strong>
+
+        </div>
+
+        <div class="setting">
+
+          <span>ADS Sensitivity</span>
+
+          <strong>78</strong>
+
+        </div>
+
+        <div class="setting">
+
+          <span>Polling Rate</span>
+
+          <strong>1000 Hz</strong>
+
+        </div>
+
+        <div class="setting">
+
+          <span>Monitor Refresh Rate</span>
+
+          <strong>240 Hz</strong>
+
+        </div>
+
+        <div class="setting">
+
+          <span>Main Game</span>
+
+          <strong>THE FINALS</strong>
+
+        </div>
+
+      </div>
+
+      <p class="note">Sensitivity values reflect the current profile and can be changed whenever your settings change.</p>
+
+    </div>
+
+  </section>
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="eyebrow">Find Me Online</div>
+
+        <h2>Socials & <span class="gold">Contact</span></h2>
+
+        <p>Follow my competitive journey.</p>
+
+      </div>
+
+      <div class="socials">
+
+        <!-- Replace # with your actual profile URLs -->
+
+        <a class="social" href="#" target="_blank" rel="noopener">Discord ↗</a>
+
+        <a class="social" href="#" target="_blank" rel="noopener">YouTube ↗</a>
+
+        <a class="social" href="#" target="_blank" rel="noopener">Twitch ↗</a>
+
+        <a class="social" href="#" target="_blank" rel="noopener">X / Twitter ↗</a>
+
+        <a class="social" href="#" target="_blank" rel="noopener">Instagram ↗</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <strong>BINI / ESPORTS</strong>
+
+    <span>THE FINALS • Egypt</span>
+
+    <span>© <span id="year"></span> BINI. All rights reserved.</span>
+
+  </div>
+
+</footer>
+
+<script>
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/*
+
+  EDIT YOUR PROFILE HERE:
+
+  1. Set your real tournament count.
+
+  2. Set your real achievements count.
+
+  3. Set total verified prize money.
+
+  4. Update the age, team, and social links in the HTML above.
+
+*/
+
+const profileStats = {
+
+  tournaments: 0,
+
+  achievements: 0,
+
+  prizeMoneyUSD: 0
+
+};
+
+document.getElementById("tournamentCount").textContent =
+
+  String(profileStats.tournaments).padStart(2, "0");
+
+document.getElementById("achievementCount").textContent =
+
+  String(profileStats.achievements).padStart(2, "0");
+
+document.getElementById("prizeTotal").textContent =
+
+  "$" + profileStats.prizeMoneyUSD.toLocaleString("en-US");
+
+</script>
+
+</body>
+
+</html>
